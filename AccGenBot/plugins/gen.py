@@ -6,11 +6,12 @@ from Configs import Config
 @AccGen.on(events.callbackquery.CallbackQuery(data="gen"))
 async def gen(gen):
      check = await verify(Config.CHANNEL_US, gen, AccGen)
+     check2 = await verify('@DynamicCoderZ', gen, AccGen)
      if check and check2 is False:
-       await gen.reply("**please Join my channel to use me:)**", buttons=[
-       [Button.url("Join Channel",url="https://t.me/ConfigsByHackerSploit)]
-       [Button.url("Bots Channel", url="https://t.me/DynamicCoderZ")]
-       ])
+         await gen.reply("**please Join my channel to use me:)**", buttons=[
+         [Button.url("Join Channel",url="https://t.me/ConfigsByHackerSploit)]
+         [Button.url("Bots Channel", url="https://t.me/DynamicCoderZ")]
+         ])
        return
 
      TEXT = """
