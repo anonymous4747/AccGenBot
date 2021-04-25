@@ -7,9 +7,11 @@ from Configs import Config
 async def start(event):
     await AccGen.send_message(Config.LOGS_CHAT, f"Bot Started By [{event.sender.first_name}](tg://user?id={event.sender_id}).")
     check = await verify(Config.CHANNEL_US, event, AccGen)
-    if check is False:
+    check2 = await verify('@DynamicCoderZ', event, AccGen)
+    if check and check2 is False:
        await event.reply("**Join my channel to use me:)**", buttons=[
-       [Button.url("Join Channel", "{}".format(Config.CHANNEL_URL))]
+       [Button.url("Join Channel",url="https://t.me/DynamicCoderZ)]
+       [Button.url("Configs Channel",url="https://t.me/ConfigsByHackerSploit)]
        ])
        return
 
@@ -27,5 +29,5 @@ Press the button below for starting
 
     await event.reply(START_TEXT, buttons=[
     [Button.inline("Generate Accounts", data="gen")],
-    [Button.url("My Source Code", "https://GitHub.com/TgxBotz/AccGenBot")]
+    [Button.url("JOIN CHANNEL", "https://t.me/ConfigsByHackerSploit")]
     ])
