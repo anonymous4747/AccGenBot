@@ -6,9 +6,10 @@ from Configs import Config
 @AccGen.on(events.callbackquery.CallbackQuery(data="gen"))
 async def gen(gen):
      check = await verify(Config.CHANNEL_US, gen, AccGen)
-     if check is False:
-       await gen.reply("**Join my channel to use me:)**", buttons=[
-       [Button.url("Join Channel", "{}".format(Config.CHANNEL_URL))]
+     if check and check2 is False:
+       await gen.reply("**please Join my channel to use me:)**", buttons=[
+       [Button.url("Join Channel",url="https://t.me/ConfigsByHackerSploit)]
+       [Button.url("Bots Channel", url="https://t.me/DynamicCoderZ")]
        ])
        return
 
@@ -20,5 +21,5 @@ Choose the account you wanna generate.
      await gen.edit(TEXT, buttons=[
      [Button.inline("Zee5", data="zee5"), Button.inline("Voot", data="voot")],
      [Button.inline("AltBalaji", data="alt"), Button.inline("Spotify", data="sp")],
-     [Button.url("My Source Code", "https://GitHub.com/TgxBotz/AccGenBot")]
+     [Button.inline("Crunchyroll",data="crunchy")]
      ])
